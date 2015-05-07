@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Agar.io cheatycodes / hacks
+// @name         Agar.io cheatycodes / hacks / buffs
 // @namespace    http://agar.io/
 // @version      0.1
 // @description  Random cheats to increase your cells survival rates!
@@ -79,7 +79,7 @@
         v.get("http://m.agar.io/info", function(a) {
             for (var b in a.regions)
                 v('#region option[value="' + b + '"]').text(N[b] + " (" + a.regions[b].numPlayers + " players)")
-                }, 
+                },
               "json")
     }
     function ia(a) {
@@ -176,7 +176,7 @@
         var b = Math.random(), c = 1;
         aa = !1;
         for (var f = a.getUint16(c, !0), c = c + 2, d = 0; d < f; ++d) {
-            var e = z[a.getUint32(c, !0)], t = 
+            var e = z[a.getUint32(c, !0)], t =
                 z[a.getUint32(c + 4, !0)], c = c + 8;
             e && t && (t.destroy(), t.ox = t.x, t.oy = t.y, t.oSize = t.size, t.nx = e.x, t.ny = e.y, t.nSize = t.size, t.updateTime = F)
         }
@@ -194,7 +194,7 @@
                 g & 4 && (c += 8);
                 g & 8 && (c += 16)
             } else {
-                var l = 63487 | l << 16, k = (l >> 16 & 255) / 
+                var l = 63487 | l << 16, k = (l >> 16 & 255) /
                     255 * 360, m = (l >> 8 & 255) / 255, l = (l >> 0 & 255) / 255;
                 if (0 == m)
                     l = l << 16 | l << 8 | l << 0;
@@ -244,7 +244,7 @@
                 g += String.fromCharCode(k)
             }
             k = null;
-            z.hasOwnProperty(f) ? (k = z[f], k.updatePos(), k.ox = 
+            z.hasOwnProperty(f) ? (k = z[f], k.updatePos(), k.ox =
                                    k.x, k.oy = k.y, k.oSize = k.size, k.color = l) : (k = new pa(f, d, e, t, l, h, g), k.pX = d, k.pY = e);
             k.nx = d;
             k.ny = e;
@@ -318,7 +318,7 @@
         va();
         T();
         d.clearRect(0, 0, m, p);
-        d.fillStyle = 
+        d.fillStyle =
             ba ? "#111111" : "#F2FBFF";
         d.fillRect(0, 0, m, p);
         d.save();
@@ -386,7 +386,7 @@
                 a.fillText(c, 100 - a.measureText(c).width / 2, 40);
                 a.font = "20px Ubuntu";
                 for (b = 0; b < q.length; ++b)
-                    c = q[b].name || "An unnamed cell", -1 != n.indexOf(q[b].id) && (c = n[0].name), Q || 0 != n.length && 
+                    c = q[b].name || "An unnamed cell", -1 != n.indexOf(q[b].id) && (c = n[0].name), Q || 0 != n.length &&
                         n[0].name == c || (c = "An unnamed cell"), c = b + 1 + ". " + c, a.fillText(c, 100 - a.measureText(c).width / 2, 70 + 24 * b)
                     } else
                         A = null
@@ -490,7 +490,7 @@
                         -10 > b[e] && (b[e] = -10);
                         b[e] = (h + l + 8 * b[e]) / 10
                     }
-                    for (var n = 
+                    for (var n =
                          this, e = 0; e < g; ++e) {
                         c = d[e].v;
                         h = d[(e - 1 + g) % g].v;
@@ -515,7 +515,7 @@
                     }
                 },updatePos: function() {
                     var a;
-                    a = (F - this.updateTime) / 
+                    a = (F - this.updateTime) /
                         120;
                     a = 0 > a ? 0 : 1 < a ? 1 : a;
                     a = a * a * (3 - 2 * a);
@@ -568,7 +568,7 @@
                     }
                 }};
         P.prototype = {_value: "",_color: "#000000",_stroke: !1,_strokeColor: "#000000",_size: 16,_canvas: null,_ctx: null,_dirty: !1,setSize: function(a) {
-            this._size != 
+            this._size !=
                 a && (this._size = a, this._dirty = !0)
         },setColor: function(a) {
             this._color != a && (this._color = a, this._dirty = !0)
